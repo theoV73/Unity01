@@ -6,19 +6,22 @@ using UnityEngine;
 public class ToolsConsols : MonoBehaviour
 {
     [MenuItem("Tools/Log Console")]
-    static void DoSomething()
+    static void LogConsole()
     {
-        Debug.Log("Doing Something...");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("OUI baguette");
     }
+    [MenuItem("Tools/Log Selected GameObject Name")]
+    static void LogSelectedGameObjectName()
+    {
+
+        Debug.Log("Selected GameObject is on " + Selection.activeGameObject + ".");
+    }
+    [MenuItem("Tools/Log Selected GameObject Name", true)]
+    static bool ValidSelectedGameObjectName()
+    {
+
+        return Selection.activeGameObject != null;
+    }
+    
 }
