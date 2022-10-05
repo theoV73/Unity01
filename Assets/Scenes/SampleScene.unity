@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 1334471358}
   - component: {fileID: 1334471357}
   - component: {fileID: 1334471356}
-  - component: {fileID: 1334471355}
+  - component: {fileID: 1334471359}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -320,19 +320,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1334471355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334471354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a46d45ede1f0e4e9a0396d28b58962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name1: d<fgg-
 --- !u!23 &1334471356
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -398,3 +385,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1334471359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334471354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a46d45ede1f0e4e9a0396d28b58962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthValue: 3.26
+  ManaValue: 4
+  name1: SHINRA TENSEI

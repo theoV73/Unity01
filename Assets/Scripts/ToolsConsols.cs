@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ToolsConsols : MonoBehaviour
 {
+    [MenuItem("bite/oui/non")]
+    [MenuItem("bite/oui/oui")]
     [MenuItem("Tools/Log Console")]
     static void LogConsole()
     {
