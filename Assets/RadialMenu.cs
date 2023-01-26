@@ -48,10 +48,13 @@ public class RadialMenu : MonoBehaviour
         else if (isOpen&&isCreate)
         {
             Close();
+            isOpen = false;
         }
         else if (!isOpen && isCreate)
         {
             OpenUI();
+            isOpen = true;
+
         }
 
 
