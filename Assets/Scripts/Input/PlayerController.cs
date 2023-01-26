@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
         _inputActionShooter.Game.Move.performed += Move;
         _inputActionShooter.Game.Move.canceled += MoveCanceled;
-
     }
 
     private void MoveCanceled(InputAction.CallbackContext obj)
@@ -49,6 +48,4 @@ public class PlayerController : MonoBehaviour
      
         transform.Translate(moveDirection * Time.deltaTime * 5);
     }
-    
-
 }

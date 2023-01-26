@@ -14,10 +14,9 @@ public class GuizmoEdito : MonoBehaviour
     
     void OnDrawGizmos()
     {
-
         //float dist = Vector3.Distance(x.position, transform.position);
 
-      // Vector3 offset = x.transform.position - transform.position;
+        // Vector3 offset = x.transform.position - transform.position;
 
         //float sqrLen = offset.sqrMagnitude;
         float sqrLen = (guizmoEdito.transform.position-transform.position).sqrMagnitude;
@@ -32,9 +31,5 @@ public class GuizmoEdito : MonoBehaviour
             Gizmos.color = Color.yellow;
         }
         Gizmos.DrawSphere(transform.position, size);
-        
-
-       
     }
-    
 }

@@ -20,7 +20,6 @@ public class Trigo : MonoBehaviour
             var pointB = new Vector3(Mathf.Cos(cal2), Mathf.Sin(cal2),0) * radius;
 
             Gizmos.DrawLine(pointA, pointB);
-
         }
         for (int i = 0; i < NBpoints; i += 1)
         {
@@ -31,8 +30,6 @@ public class Trigo : MonoBehaviour
             var pointB = new Vector3(Mathf.Cos(cal2), Mathf.Sin(cal2),0) * radius;
 
             Gizmos.DrawLine(pointA, pointB);
-
         }
-       
     }
 }

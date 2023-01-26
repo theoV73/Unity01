@@ -8,5 +8,4 @@ public class Item : ScriptableObject
     [SerializeField] private string _name;
 
     public string GetName { get { return _name; } }
-
 }
