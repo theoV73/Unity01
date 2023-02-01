@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UIElements;
 
@@ -16,19 +15,35 @@ public class RadialMenuEntry : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     RectTransform rect;
 
-    private void Start()
+    Item _linckedItem;
+    public Item LinckedItem
     {
+        get { return _linckedItem; }
+        set
+        {
+            SetLabel(value.GetName);
+            SetIcon(value.GetTexture);
+            _linckedItem = value;
+        }
+    }
+
+    private void Awake()
+    {
+        Label.enabled = false;
+        Icon.enabled = false;
         rect = GetComponent<RectTransform>();
     }
 
     public void SetLabel(string pText)
     {
+        Label.enabled = true;
         Label.text = pText;
     }
 
     // THEO C : meme fonctionnement que pour les scriptableObjs
     public void SetIcon(Texture pIcon)
     {
+        Icon.enabled = true;
         Icon.texture = pIcon;
     }
 
@@ -38,18 +53,27 @@ public class RadialMenuEntry : MonoBehaviour, IPointerClickHandler, IPointerEnte
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (LinckedItem != null)
+        {
 
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        rect.DOComplete();
-        rect.DOScale(Vector3.one * 1.5f, .3f).SetEase(Ease.OutQuad);
+        if(LinckedItem != null)
+        {
+            rect.DOComplete();
+            rect.DOScale(Vector3.one * 1.5f, .3f).SetEase(Ease.OutQuad);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        rect.DOComplete();
-        rect.DOScale(Vector3.one, .3f).SetEase(Ease.OutQuad);
+        if (LinckedItem != null)
+        {
+            rect.DOComplete();
+            rect.DOScale(Vector3.one, .3f).SetEase(Ease.OutQuad);
+        }
     }
 }

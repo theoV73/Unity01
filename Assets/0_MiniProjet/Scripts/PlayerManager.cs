@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] string[] inventory= new string[5];
 
+    [SerializeField] Inventory inventory2;
+
     void Start()
     {
         //set le rigidbody
@@ -65,7 +67,10 @@ public class PlayerManager : MonoBehaviour
         //si il touche un objet interactable, alors il regarde si il reste de place dans l'inventaire, si oui, il ajoute l'objet a l'inventaire
         if (collision.gameObject.layer == 7)
         {
-            for (int i = 0; i < inventory.Length; i++)
+            WhatItem currentItem = collision.gameObject.GetComponent<WhatItem>();
+            inventory2.AddItem(currentItem.GetItem);
+
+            /*for (int i = 0; i < inventory.Length; i++)
             {
                 Debug.Log(inventory[i]);
                 Debug.Log(inventory.Length);
@@ -74,7 +79,7 @@ public class PlayerManager : MonoBehaviour
                     inventory[i] = collision.gameObject.GetComponent<WhatItem>().GetItem.GetName;
                     return;
                 }
-            }
+            }*/
         }
     }
 }

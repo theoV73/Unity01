@@ -15,20 +15,46 @@ public class RadialMenu : MonoBehaviour
     public bool isOpen=false;
     public bool isCreate=false;
 
+    [SerializeField] Inventory inventory;
+
+    private void OnEnable()
+    {
+        inventory.OnItemAdded += ActivateEntry;
+    }
+    private void OnDisable()
+    {
+        inventory.OnItemAdded -= ActivateEntry;
+        inventory.Clear();
+    }
+
     private void Start()
     {
         Entries = new List<RadialMenuEntry>();
     }
 
-    void AddEntry(string pLabel, Texture picon)
+    void AddEntry(/*string pLabel, Texture picon*/)
     {
         GameObject entry = Instantiate(EntryPrefab, transform);
 
         RadialMenuEntry rme = entry.GetComponent<RadialMenuEntry>();
-        rme.SetLabel(pLabel);
-        rme.SetIcon(picon);
-
+        /*rme.SetLabel(pLabel);
+        rme.SetIcon(picon);*/
         Entries.Add(rme);
+    }
+
+    void ActivateEntry(int index, Item addedItem)
+    {
+        if(!isCreate)
+        {
+            isCreate = true;
+            for (int i = 0; i < 8; i++)
+            {
+                AddEntry(/*"Button" + i.ToString(), Icons[i]*/);
+            }
+            Rearrange();
+            Close();
+        }
+        Entries[index].LinckedItem = addedItem;
     }
 
     public void Open()
@@ -40,7 +66,7 @@ public class RadialMenu : MonoBehaviour
 
             for (int i = 0; i < 8; i++)
             {
-                AddEntry("Button" + i.ToString(), Icons[i]);
+                AddEntry(/*"Button" + i.ToString(), Icons[i]*/);
             }
             Rearrange();
         }

@@ -281,6 +281,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: e307718ee9215364da3448d999ee3150, type: 3}
   - {fileID: 2800000, guid: a6f73737bcf57554d9962d40010d4726, type: 3}
   - {fileID: 2800000, guid: a6f73737bcf57554d9962d40010d4726, type: 3}
+  isOpen: 0
+  isCreate: 0
+  inventory: {fileID: 11400000, guid: 2bed023de01dea94caadb8602fb70136, type: 2}
 --- !u!1 &289550539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1398,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  inventory2: {fileID: 11400000, guid: 2bed023de01dea94caadb8602fb70136, type: 2}
 --- !u!114 &1076284366
 MonoBehaviour:
   m_ObjectHideFlags: 0
