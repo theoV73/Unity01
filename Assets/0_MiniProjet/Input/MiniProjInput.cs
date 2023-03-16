@@ -158,6 +158,17 @@ public partial class @MiniProjInput : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d722b8d2-0aa2-4f36-a67c-57356b10d79d"",
+                    ""path"": ""<AndroidJoystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""AndroidStick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -213,6 +224,17 @@ public partial class @MiniProjInput : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""AndroidStick"",
+            ""bindingGroup"": ""AndroidStick"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Joystick>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -363,6 +385,15 @@ public partial class @MiniProjInput : IInputActionCollection2, IDisposable
         {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
+        }
+    }
+    private int m_AndroidStickSchemeIndex = -1;
+    public InputControlScheme AndroidStickScheme
+    {
+        get
+        {
+            if (m_AndroidStickSchemeIndex == -1) m_AndroidStickSchemeIndex = asset.FindControlSchemeIndex("AndroidStick");
+            return asset.controlSchemes[m_AndroidStickSchemeIndex];
         }
     }
     public interface IGameActions
