@@ -12,10 +12,10 @@ public class CreateJSON : MonoBehaviour
     [SerializeField]
         private Inventory inventory;
     private string FilePath => $"{Application.persistentDataPath}/{inventory.name}.json";
-    public static CreateJSON CreateFromJSON(string jsonString)
+   /* public static CreateJSON CreateFromJSON(string jsonString)
     {
         return JsonUtility.FromJson<CreateJSON>(jsonString);
-    }
+    }*/
 
 
     [ContextMenu("Save")]
